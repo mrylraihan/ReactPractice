@@ -16,6 +16,7 @@ import { Component } from "react"
 // }
 
 class Car extends Component{
+   
     render(){
         return <div className="test">
             <h2> Im driving a {this.props.carName} and its was {this.props.cost} and its a {this.props.type} car </h2>
