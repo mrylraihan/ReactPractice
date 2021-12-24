@@ -3,8 +3,11 @@ import ExpenseItem from "./components/ExpenseItem";
 import NestArray from "./components/NestArray";
 import TestArray from "./components/TestArray";
 import GundamIteration from "./components/GundamIteration";
-import {Welcome, Goodbye, NameCheck}from "./components/Welcome";
+import { Welcome, Goodbye, NameCheck }from "./components/Welcome";
 import Test1 from "./components/Test1";
+import TestState from "./components/TestState";
+import TestStateFunc from "./components/TestStateFunc";
+
 
 
 const p1 = {name:'Wallie'}
@@ -17,9 +20,16 @@ const funStuff = {
   title: "Fun things 2 do",
   stufflist: ['study', 'work out', 'coding']
 }
+
+const printName =(name)=> name
+
 function App() {
+  let name = 'wallie'
   return (
     <div>
+      <TestStateFunc />
+      <TestState />
+      <h1>{printName(name)}</h1>
       <h1>Let's get started!</h1>
       <ExpenseItem />
       <Car carName={'Mustang'} cost={2000} type={'muscle'}/>
