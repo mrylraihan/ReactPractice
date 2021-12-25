@@ -7,6 +7,9 @@ import { Welcome, Goodbye, NameCheck }from "./components/Welcome";
 import Test1 from "./components/Test1";
 import TestState from "./components/TestState";
 import TestStateFunc from "./components/TestStateFunc";
+import Composition from "./components/Composition";
+import CompTest from "./components/CompTest";
+import CompTest2 from "./components/CompTest2";
 
 
 
@@ -27,6 +30,8 @@ function App() {
   let name = 'wallie'
   return (
     <div>
+      <Composition className='compT'><CompTest></CompTest></Composition>
+      <Composition className='compT2'><CompTest2></CompTest2></Composition>
       <TestStateFunc />
       <TestState />
       <h1>{printName(name)}</h1>
