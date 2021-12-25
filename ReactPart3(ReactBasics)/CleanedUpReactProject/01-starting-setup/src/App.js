@@ -1,5 +1,4 @@
 import Expenses from "./components/Expenses";
-import SayName from "./components/SayName";
 // import Car from "./components/Car";
 
 
@@ -16,7 +15,6 @@ const expenses = [
   return (
     <div>
       {/* <Car carName={'Mustang'} cost={2000} type={'muscle'} /> */}
-      <SayName name={'wallie'} />
       <h1>Let's get started!</h1>
       <Expenses items={expenses} />
       
