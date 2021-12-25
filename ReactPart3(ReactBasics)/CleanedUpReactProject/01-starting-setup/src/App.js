@@ -1,4 +1,7 @@
 import Expenses from "./components/Expenses";
+import React from 'react'
+import Card from "./components/Card";
+import './components/Card.css'
 // import Car from "./components/Car";
 
 
@@ -11,12 +14,19 @@ const expenses = [
   { id:'e3', title: 'Health Insurance', amount: 56.76, date: new Date(2021, 2, 18) },
   { id:'e4', title: 'life Insurance', amount: 56.76, date: new Date(2021, 2, 28) }
 ]
+// // Without JSX
+// return React.createElement('div',{}, 
+// React.createElement('h2',{},'Lets get started!'),
+// React.createElement(Expenses,{items:expenses}),
+// React.createElement('p',{className: 'card', num:1},'ima a p Tag'));
 
+// Using JSX 
   return (
     <div>
       {/* <Car carName={'Mustang'} cost={2000} type={'muscle'} /> */}
       <h1>Let's get started!</h1>
       <Expenses items={expenses} />
+      <p className="card" num={1}>Hey ima p-tag!</p>
       
     </div>
   );
