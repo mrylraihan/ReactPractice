@@ -3,7 +3,7 @@ import ExpenseItems from "./ExpenseItem"
 import './Expenses.css'
 const Expenses = (props)=>{
     const mapAllExpense = props.items.map(ele=>{
-        return <ExpenseItems title={ele.title} amount={ele.amount} date={ele.date} />
+        return <ExpenseItems key={ele.title} title={ele.title} amount={ele.amount} date={ele.date} />
     })
     return ( 
         <Card className='expenses'>

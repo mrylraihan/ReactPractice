@@ -26,8 +26,6 @@ const expenses = [
       {/* <Car carName={'Mustang'} cost={2000} type={'muscle'} /> */}
       <h1>Let's get started!</h1>
       <Expenses items={expenses} />
-      <p className="card" num={1}>Hey ima p-tag!</p>
-      
     </div>
   );
 }
