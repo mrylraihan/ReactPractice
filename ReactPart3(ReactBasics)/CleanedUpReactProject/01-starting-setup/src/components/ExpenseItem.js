@@ -1,13 +1,20 @@
 import './ExpenseItem.css'
 import ExpenseDate from './ExpenseDate'
 import Card from './Card'
-import React from 'react'
+import React, { useState } from 'react'
 
 const ExpenseItem = (props) => {
 	// const [title, setTitle] = React.useState(props.title)
-	let title = props.title
+	const [title, setTitle] = useState(props.title)
 	const clickHandler = () => {
-		title = 'Updated!'
+		
+		if(title !== 'updated!'){
+			setTitle('updated!')
+		}else{
+			setTitle(props.title)
+		}
+		// const newTitle = oldTitle === 'updated!' ? title : otherTitle;
+
 		console.log(title)
 	};
 
