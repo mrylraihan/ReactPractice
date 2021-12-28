@@ -7,18 +7,8 @@ const ExpenseItem = (props) => {
 	// const [title, setTitle] = React.useState(props.title)
 	const [title, setTitle] = useState(props.title)
 	const clickHandler = () => {
-		
-		// if(title !== 'updated!'){
-		// 	setTitle('updated!')
-		// }else{
-		// 	setTitle(props.title)
-		// }
-
 		let newTitle = title !== 'updated!'? 'updated!':props.title;
-
 		setTitle(newTitle)
-		// const newTitle = oldTitle === 'updated!' ? title : otherTitle;
-
 		console.log(title)
 	};
 
