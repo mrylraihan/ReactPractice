@@ -10,6 +10,7 @@ import TestStateFunc from "./components/TestStateFunc";
 import Composition from "./components/Composition";
 import CompTest from "./components/CompTest";
 import CompTest2 from "./components/CompTest2";
+import TestStateFunc2 from "./components/TestStateFunc2";
 
 
 
@@ -32,6 +33,7 @@ function App() {
     <div>
       <Composition className='compT'><CompTest></CompTest></Composition>
       <Composition className='compT2'><CompTest2></CompTest2></Composition>
+      <TestStateFunc2 chair={'HumanScale Freedom'}/>
       <TestStateFunc />
       <TestState />
       <h1>{printName(name)}</h1>

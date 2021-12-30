@@ -9,10 +9,10 @@ import './components/Card.css'
 function App() {
  
 const expenses = [
-  { id:'e1', title: 'Car Insurance', amount: 294.67, date: new Date(2021, 9, 11) },
-  { id:'e2', title: 'Home Insurance', amount: 314.99, date: new Date(2021, 1, 10) },
-  { id:'e3', title: 'Health Insurance', amount: 56.76, date: new Date(2021, 2, 18) },
-  { id:'e4', title: 'life Insurance', amount: 56.76, date: new Date(2021, 2, 28) }
+  { id:'e1', title: 'Toilet Paper', amount: 294.67, date: new Date(2021, 9, 11) },
+  { id:'e2', title: 'New TV', amount: 314.99, date: new Date(2021, 1, 10) },
+  { id:'e3', title: 'Car Insurance', amount: 56.76, date: new Date(2021, 2, 18) },
+  { id:'e4', title: 'New Sit/Stand Desk(Ebony Wood)', amount: 235.36, date: new Date(2021, 2, 28) }
 ]
 // // Without JSX
 // return React.createElement('div',{}, 
