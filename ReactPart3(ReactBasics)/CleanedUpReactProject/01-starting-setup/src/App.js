@@ -1,7 +1,6 @@
-import Expenses from "./components/Expenses";
+import Expenses from './components/Expenses/Expenses';
 import React from 'react'
-import Card from "./components/Card";
-import './components/Card.css'
+import NewExpense from './components/NewExpense/NewExpense';
 // import Car from "./components/Car";
 
 
@@ -24,7 +23,7 @@ const expenses = [
   return (
     <div>
       {/* <Car carName={'Mustang'} cost={2000} type={'muscle'} /> */}
-      <h1>Let's get started!</h1>
+      <NewExpense></NewExpense>
       <Expenses items={expenses} />
     </div>
   );
