@@ -1,6 +1,7 @@
 
 const Test1 = (props) => {
-    const listStuff = props.stuff.stufflist.map(ele => <li>{ele}</li>)
+    let num = 0
+    const listStuff = props.stuff.stufflist.map(ele => <li key={ele.title}>{ele}</li>)
     return (
         <>
             <ul>

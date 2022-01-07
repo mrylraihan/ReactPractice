@@ -20,10 +20,13 @@ const expenses = [
 // React.createElement('p',{className: 'card', num:1},'ima a p Tag'));
 
 // Using JSX 
+const addExpenseHandler = expense =>{
+  console.log('In App.js',expense);
+};
   return (
     <div>
       {/* <Car carName={'Mustang'} cost={2000} type={'muscle'} /> */}
-      <NewExpense></NewExpense>
+      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
       <Expenses items={expenses} />
     </div>
   );
