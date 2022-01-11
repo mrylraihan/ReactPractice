@@ -17,6 +17,7 @@ const ExpenseItem = (props) => {
 
 	// you can only hav one root element being returned
 	return (
+		<li>
 		<Card className="expense-item">
 			<ExpenseDate date={props.date}></ExpenseDate>
 			<div className='expense-item__description'>
@@ -25,6 +26,7 @@ const ExpenseItem = (props) => {
 			</div>
 			{/* <button onClick={clickHandler}>Click Title!</button> */}
 		</Card>
+		</li>
 	)
 }
 export default ExpenseItem

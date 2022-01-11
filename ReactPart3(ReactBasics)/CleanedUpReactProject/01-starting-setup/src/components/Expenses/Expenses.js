@@ -1,8 +1,8 @@
 import Card from "../UI/Card"
 import ExpensesFilter from "./ExpenseFilter"
-import ExpenseItems from "./ExpenseItem"
 import './Expenses.css'
 import React , {useState} from "react"
+import ExpensesList from "./ExpensesList"
 
 const Expenses = (props)=>{
     const [filteredYear, setFilteredYear] = useState('2020')
@@ -19,23 +19,16 @@ const Expenses = (props)=>{
         return ""+item.date.getFullYear() === filteredYear
     })
     
-      const mapFilteredExpense = filteredItems.map(ele=>{
-        return <ExpenseItems key={ele.title} title={ele.title} amount={ele.amount} date={ele.date} />
-    })
+    //   const mapFilteredExpense = filteredItems.map(ele=>{
+    //     return <ExpenseItems key={ele.title} title={ele.title} amount={ele.amount} date={ele.date} />
+    // })
 
-    let expensesContent = <p>No data Available</p>
-    if(filteredItems.length >0){
-        expensesContent = mapFilteredExpense
-        
-        // expensesContent = filteredItems.map(ele => {
-        // return <ExpenseItems key={ele.id} title={ele.title} amount={ele.amount} date={ele.date} />})
-    }
 
     return ( 
         <Card className='expenses'>
             <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
             {/* {mapAllExpense} */}
-            {expensesContent}
+            <ExpensesList fItems={filteredItems}/>
            
             {/* <ExpenseItems title={props.items[0].title} amount={props.items[0].amount} date={props.items[0].date} />
 
