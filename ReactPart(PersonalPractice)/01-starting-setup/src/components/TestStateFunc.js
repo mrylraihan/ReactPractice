@@ -22,7 +22,10 @@ const TestStateFunc = () => {
     return (
         <>
             <h1 className={`${onorOff ?'white-Text':''}`}>my favorite car is a {car}</h1>
+            <div className="alignCheckBox">
+            <input type="checkbox" onClick={whichCar} />
             <h2 className={`${onorOff ? 'strikethrough' : ''}`}>StrikeThrough practice</h2>
+            </div>
             <button onClick={whichCar}>click me</button>
         </>
 

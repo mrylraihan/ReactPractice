@@ -49,3 +49,8 @@
 		transform: scaleX(1);
 	}
 }
+
+.alignCheckBox {
+	display:flex;
+	align-items :center;
+}
