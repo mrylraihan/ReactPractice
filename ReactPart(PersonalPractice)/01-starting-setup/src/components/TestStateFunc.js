@@ -3,15 +3,15 @@ import './TestStateFunc.css'
 
 const TestStateFunc = () => {
     const [car, setCar] = useState('Ford')
-    const [onorOff, setOnOrOrr] = useState(false)
+    const [shouldStrike, setStrike] = useState(false)
     
     
     const whichCar=()=>{
         if(car==='Tesla'){
-            setOnOrOrr(false)
+            setStrike(false)
             return setCar('Mustang')
         }else{
-            setOnOrOrr(true)
+            setStrike(true)
             return setCar('Tesla')
         }
         
@@ -21,10 +21,10 @@ const TestStateFunc = () => {
 
     return (
         <>
-            <h1 className={`${onorOff ?'white-Text':''}`}>my favorite car is a {car}</h1>
+            <h1 className={`${shouldStrike ?'white-Text':''}`}>my favorite car is a {car}</h1>
             <div className="alignCheckBox">
             <input type="checkbox" onClick={whichCar} />
-            <h2 className={`${onorOff ? 'strikethrough' : ''}`}>StrikeThrough practice</h2>
+                <h2 className={`${shouldStrike ? 'strikethrough' : ''}`}>StrikeThrough practice</h2>
             </div>
             <button onClick={whichCar}>click me</button>
         </>
