@@ -8,7 +8,7 @@ const arrayNested = [
 const NestArray = () =>(
     <>
       {arrayNested.map((cof) => (
-        <ul key={cof.family}>The Family name is: {cof.family} {cof.familyMembers.map(people=><li>{people}</li>)}</ul>
+        <ul key={cof.family}>The Family name is: {cof.family} {cof.familyMembers.map(people => <li key={Math.random().toString()}>{people}</li>)}</ul>
       ))}
     </>
 )

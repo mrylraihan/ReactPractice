@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import { getKanyeQuote } from "../api/apiCalls"
+import axios from "axios"
 
 const StarShip = ({quote, setQuote})=>{
     
@@ -7,7 +8,8 @@ const StarShip = ({quote, setQuote})=>{
     const gettingData =()=>{
         const fetchData = async () => {
             try {
-                const res = await getKanyeQuote()
+                const res = await getKanyeQuote()//method that does api call
+                // const res = await axios.get('https://api.kanye.rest') or we could have dont it this way 
                 console.log(res);
                 console.log(res.data);
                 setQuote(res.data.quote)

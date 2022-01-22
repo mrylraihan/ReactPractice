@@ -18,7 +18,7 @@ function GundamIteration(){
     return (
             <div>
       {gundamArrays.map((pil) => (
-        <ul key={pil.pilot}>The Pilot is: {pil.pilot} {pil.mechs.map(gund=><li>{gund}</li>)}</ul>
+        <ul key={pil.pilot}>The Pilot is: {pil.pilot} {pil.mechs.map(gundam => <li key={Math.random().toString()}>{gundam}</li>)}</ul>
       ))}
     </div>
         

@@ -1,6 +1,6 @@
 
 const Test1 = (props) => {
-    const listStuff = props.stuff.stufflist.map(ele =><li key={ele.id}>{ele}</li>)
+    const listStuff = props.stuff.stufflist.map(ele =><li key={Math.random().toString()}>{ele}</li>)
     return (
         <>
             <ul>
