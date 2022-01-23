@@ -3,6 +3,7 @@ import Card from '../UI/Card.js'
 import Button from '../UI/Button.js'  
 import styles from './AddUser.module.css'
 import axios from 'axios'
+import { BsFillAlarmFill } from 'react-icons/bs'
 const AddUser = props => {
    
         const fetchData = async () => {
@@ -20,8 +21,8 @@ const AddUser = props => {
 
     return (
         <Card className={styles.input}>
-            <h1>Lets get a Quotes!</h1>
-            <Button onClick={()=>fetchData()}>Get a Quote!</Button>
+            <h1>Lets get a Quotes! <BsFillAlarmFill/></h1>
+            <Button onClick={() => fetchData()}>Get a Quote!</Button>
         </Card>
     )
 }
