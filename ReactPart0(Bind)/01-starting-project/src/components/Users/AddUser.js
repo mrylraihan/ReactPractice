@@ -1,16 +1,16 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Card from '../UI/Card.js'
 import Button from '../UI/Button.js'  
 import styles from './AddUser.module.css'
 import axios from 'axios'
-import { BsFillAlarmFill } from 'react-icons/bs'
+import { BsFillAlarmFill, BsDoorClosedFill } from 'react-icons/bs'
 const AddUser = props => {
    
     const website = 'https://api.kanye.rest'
-        const fetchData = async (web) => {
+        const fetchData = async () => {
             try {
                 // const res = await getKanyeQuote()//method that does api call
-                const res = await axios.get(web) //or we could have dont it this way 
+                const res = await axios.get(website) //or we could have dont it this way 
                 console.log(res);
                 console.log(res.data);
                 props.onAddQuote(res.data.quote)
@@ -22,9 +22,9 @@ const AddUser = props => {
 
     return (
         <Card className={styles.input}>
-            <h1>Lets get a Quotes! <BsFillAlarmFill/></h1>
-            {/* <Button onClick={() => fetchData()}>Get a Quote!</Button> */}
-            <Button onClick={fetchData.bind(this,website)}>Get a Quote!</Button>
+            <h1>Lets get a Quotes! <BsFillAlarmFill/> <BsDoorClosedFill></BsDoorClosedFill></h1>
+            <Button onClick={() => fetchData()}>Get a Quote!</Button>
+            {/* <Button onClick={fetchData.bind(this,website)}>Get a Quote!</Button> */}
         </Card>
     )
 }

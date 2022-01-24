@@ -19,7 +19,7 @@ const UsersList = (props) => {
         alert(`you've been alive for ${daysAlive} days`) 
     }
 
-    const newElements = props.users.map(user => <li key={user.id}>{user.name} ({user.age} years old) <Button onClick={multiplyYears.bind(user)}>how manys days iv been alive</Button><Button onClick={deleteHandler.bind(user)}>Delete User </Button></li>)
+    const newElements = props.users.map(user => <li key={user.id}>{user.name} ({user.age} years old) <Button onClick={multiplyYears.bind(user)}>how many days iv been alive</Button><Button onClick={deleteHandler.bind(user)}>Delete User </Button></li>)
 
     return (
         <Card className={styles.users}>
