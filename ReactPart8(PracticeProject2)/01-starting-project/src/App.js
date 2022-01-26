@@ -29,12 +29,5 @@ console.log(listOfUsers);
     </div>
   );
 }
-// function App() {
-//   return (
-//     <div>
-//       <AddUser/>
-//     </div>
-//   );
-// }
 
 export default App;
