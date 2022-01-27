@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import H1 from './components/UI/H1';
+// import H1 from './components/UI/H1';
 import AddUser from './components/Users/AddUser';
 import UsersList from './components/Users/UsersList';
 
@@ -23,7 +23,7 @@ const App =()=>{
 console.log(listOfUsers);
   return (
     <div>
-      <H1>Hello</H1>
+      {/* <H1>Hello</H1> */}
       <AddUser onAddUser={addUserList}/>
       <UsersList onDelete={deleteHandler} users={listOfUsers}/>
     </div>
