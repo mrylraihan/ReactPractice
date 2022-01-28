@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Wrapper from '../Helpers/Wrapper'
 import Button from '../UI/Button'
 import Card from '../UI/Card'
@@ -6,20 +6,25 @@ import ErrorModal from '../UI/ErrorModal'
 import styles from './AddUser.module.css'
 
 const AddUser = (props) => {
-    const [userName, setUserName] = useState('')
-    const [age, setAge] = useState('')
+    const nameInputRef = useRef()
+    const ageInputRef = useRef()
+
+    // const [userName, setUserName] = useState('')
+    // const [age, setAge] = useState('')
     const [error, setError]=useState()
 
-    const onChangeName = (event) => {
-        setUserName(event.target.value)
-    }
-    const onChangeAge = (event) => {
-        setAge(event.target.value)
-    }
+    // const onChangeName = (event) => {
+    //     setUserName(event.target.value)
+    // }
+    // const onChangeAge = (event) => {
+    //     setAge(event.target.value)
+    // }
 
     const AddUserHandler = (event) => {
         event.preventDefault()
-        if (userName.trim().length === 0 && age.trim().length === 0) {
+        const enteredName = nameInputRef.current.value;
+        const enteredAge = ageInputRef.current.value;
+        if (enteredName.trim().length === 0 && enteredAge.trim().length === 0) {
             console.log('error');
             setError({
                 title: 'Invalid input', 
@@ -27,7 +32,7 @@ const AddUser = (props) => {
             })
             return
         }
-        if (+age <= 1) {
+        if (+enteredAge <= 1) {
             console.log('age must be greater then 1');
             setError({
                 title: 'Invalid age',
@@ -35,10 +40,13 @@ const AddUser = (props) => {
             })
             return
         }
-        console.log(userName, age);
-        props.onAddUser(userName, age);
-        setAge('')
-        setUserName('')
+        // console.log(userName, age);
+        props.onAddUser(enteredName, enteredAge);
+        // how to reset the value with out state or value
+        nameInputRef.current.value = ''
+        ageInputRef.current.value = ''
+        // setAge('')
+        // setUserName('')
     }
 
 
@@ -49,9 +57,13 @@ const AddUser = (props) => {
             <Card className={styles.input}>
                 <form onSubmit={AddUserHandler}>
                     <label htmlFor='userName'>UserName</label>
-                    <input id='userName' type='text' value={userName} onChange={onChangeName} />
+                    <input id='userName' type='text' 
+                    // value={userName} onChange={onChangeName} 
+                    ref={nameInputRef}/>
                     <label htmlFor='age'>Age  (Years)</label>
-                    <input id='age' type='number' value={age} onChange={onChangeAge} />
+                    <input id='age' type='number' 
+                    // value={age} onChange={onChangeAge} 
+                    ref={ageInputRef}/>
                     {/* <button type='submit'>Add User</button> */}
                     <Button type='submit'>Add User</Button>
                 </form>
