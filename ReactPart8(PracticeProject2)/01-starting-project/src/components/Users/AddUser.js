@@ -8,6 +8,7 @@ import styles from './AddUser.module.css'
 const AddUser = (props) => {
     const nameInputRef = useRef()
     const ageInputRef = useRef()
+    const fullNameInputRef = useRef()
 
     // const [userName, setUserName] = useState('')
     // const [age, setAge] = useState('')
@@ -42,13 +43,14 @@ const AddUser = (props) => {
         }
         // console.log(userName, age);
         props.onAddUser(enteredName, enteredAge);
+        console.log(fullNameInputRef.current.value)
         // how to reset the value with out state or value
         nameInputRef.current.value = ''
         ageInputRef.current.value = ''
+        fullNameInputRef.current.value = ''
         // setAge('')
         // setUserName('')
     }
-
 
 
     return (
@@ -60,6 +62,10 @@ const AddUser = (props) => {
                     <input id='userName' type='text' 
                     // value={userName} onChange={onChangeName} 
                     ref={nameInputRef}/>
+                    <label htmlFor='name'>Full Name</label>
+                    <input id='name' type='text' 
+                    // value={userName} onChange={onChangeName} 
+                    ref={fullNameInputRef}/>
                     <label htmlFor='age'>Age  (Years)</label>
                     <input id='age' type='number' 
                     // value={age} onChange={onChangeAge} 
