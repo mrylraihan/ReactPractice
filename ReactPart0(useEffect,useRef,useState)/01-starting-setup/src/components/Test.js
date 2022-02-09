@@ -9,7 +9,7 @@ function Test(props) {
         console.log('im working');
         setCount(preV=> preV+1)
         console.log(count);
-    }, [])
+    }, [props.name])
     // }, [inputRef, props.name, count])
 
     const sendData =()=>{

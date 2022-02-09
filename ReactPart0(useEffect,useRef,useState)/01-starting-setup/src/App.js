@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 import Controlled from "./components/Controlled";
 import ControlledF from "./components/ControlledF";
+import HookTimer from "./components/HookTimer";
 import Test from "./components/Test";
 import UnControlled from "./components/UnControlled";
 import UnControlledF from "./components/UnControlledF";
@@ -20,6 +21,7 @@ function App() {
       <ControlledF setName={setName}/>
       <UnControlledF />
       <Test setName={setName} name={name}></Test>
+      <HookTimer />
     </div>
   );
 }
