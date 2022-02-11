@@ -21,7 +21,7 @@ function CountOneReducer() {
     const [count, dispatch] = useReducer(reducer, initialState)// these arent defined yet 
     return (
         <div>
-            <div>Count - {count}</div>
+            <div>Count - {count} with useReducer</div>
             <button onClick={()=>dispatch('increment')}>Increment</button>
             <button onClick={() => dispatch('decrement')}>Decrement</button>
             <button onClick={() => dispatch('reset')}>Reset</button>

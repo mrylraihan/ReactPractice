@@ -22,7 +22,7 @@ function CountOneStateObjects() {
                    return  {...prev, userInput: prev.userInput= e.target.value}})}></input>
                 <button onClick={submitInput}>click me!</button>
             </div>
-            <div>Count - {countAndInput.count} With state</div>
+            <div>Count - {countAndInput.count} With state as an Object</div>
             <button onClick={()=>setCountAndInput(prev => {
                 return { ...prev, count: prev.count + 1 }
             })}>Increment</button>

@@ -16,7 +16,7 @@ function CountOneState() {
                 <input value={userInput} onChange={(e)=>setUserInput(e.target.value)}></input>
                 <button onClick={submitInput}>click me!</button>
             </div>
-            <div>Count - {count} With state</div>
+            <div>Count - {count} With State</div>
             <button onClick={() => setCount(prev=>{
                 return prev + 1
             })}>Increment</button>
