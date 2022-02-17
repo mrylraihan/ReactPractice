@@ -7,6 +7,7 @@ import HookTimer from "./components/HookTimer";
 import Test from "./components/Test";
 import UnControlled from "./components/UnControlled";
 import UnControlledF from "./components/UnControlledF";
+import ControlledFStateAndRef from './components/ControlledFStateAndRef'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <UnControlledF />
       <Test setName={setName} name={name}></Test>
       <HookTimer />
+      <ControlledFStateAndRef setName={setName}/>
     </div>
   );
 }
