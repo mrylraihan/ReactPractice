@@ -1,9 +1,10 @@
 import React from "react";
+import UserContext from "./store/UserContext";
 import './index.css'
 import ComponentC from './components/ComponentC'
 
 
-export const UserContext = React.createContext()
+// export const UserContext = React.createContext()
 export const ChannelContext = React.createContext()
 
 function App() {

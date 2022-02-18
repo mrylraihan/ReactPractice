@@ -18,7 +18,8 @@ const TestStateFunc = () => {
     }
    
     
-
+    // <div className={'menu ' + (props.menuOpen && 'active')}>
+    // <div className={`menu ${props.menuOpen ? 'active' : ''}`}>
     return (
         <>
             <h1 className={`${shouldStrike ?'white-Text':''}`}>my favorite car is a {car}</h1>

@@ -1,5 +1,6 @@
 import React from 'react'
-import { UserContext, ChannelContext } from '../App'
+import { ChannelContext } from '../App'
+import UserContext from '../store/UserContext'
 
 function ComponentF() {
 	return (
