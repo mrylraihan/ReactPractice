@@ -1,13 +1,18 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import AuthContext from '../../store/auth-context';
 
 import classes from './Navigation.module.css';
 
 const Navigation = (props) => {
-const ctx = useContext(AuthContext);
-
   return (
- <nav className={classes.nav}>
+    <AuthContext.Consumer>
+      {/* the ctx can be named anything but what is this getting is the 
+      {
+        isLoggedIn: false
+      } from our auth-context.js file , so ctx equals this object*/}
+      {/* now we need to return all of our jsx code and you will be able to access our context with ctx */}
+      {(ctx) => {
+        return <nav className={classes.nav}>
           <ul>
             {ctx.isLoggedIn && (
               <li>
@@ -26,6 +31,9 @@ const ctx = useContext(AuthContext);
             )}
           </ul>
         </nav>
+      }}
+      
+    </AuthContext.Consumer>
   );
 };
 

@@ -33,15 +33,17 @@ function App() {
   return (
     // now every Component wrapped will have access to the authContext
     // Provider is stating that any wrapped here will have access
-    <AuthContext.Provider value={{
-      isLoggedIn: isLoggedIn,
-    }}>
+    // <AuthContext.Provider value={{
+    //   isLoggedIn: isLoggedIn,
+    // }}>
+    <>
       <MainHeader onLogout={logoutHandler} />
       <main>
         {!isLoggedIn && <Login onLogin={loginHandler} />}
         {isLoggedIn && <Home onLogout={logoutHandler} />}
       </main>
-      </AuthContext.Provider>
+    </>
+      // </AuthContext.Provider>
      
   );
 }
