@@ -1,7 +1,9 @@
 import React from "react";
 import './index.css'
-import ComponentC from './components/ComponentC'
+// import ComponentC from './components/ComponentC'
 import ComponentG from './components/ComponentG'
+import ComponentW from "./components/ComponentW";
+
 
 
 export const UserContext = React.createContext({})
@@ -11,15 +13,18 @@ function App() {
  
   return (
     <div className="App">
-      {/* <h1>Welcome</h1> */}
-      <UserContext.Provider value={{ firstname: 'Wallie'  }}>
-        <ChannelContext.Provider value={{ lastname: 'Raihan' }}>
-          {/* <ComponentC /> */}
+      <h1>Welcome</h1>
+      <UserContext.Provider value={{ firstName: 'Wallie'  }}>
+        <ChannelContext.Provider value={{ lastName: 'Raihan' }}>
+          {/* <div>
+          <ComponentC />
+          </div> */}
           <div>
             <ComponentG></ComponentG>   
           </div>
         </ChannelContext.Provider>
       </UserContext.Provider>
+      <ComponentW/>
     </div>
   );
 }
