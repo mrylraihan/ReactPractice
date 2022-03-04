@@ -1,7 +1,7 @@
 import Expenses from './components/Expenses/Expenses';
 import React, {useState} from 'react'
 import NewExpense from './components/NewExpense/NewExpense';
-// import Car from "./components/Car";
+
 
 const DUMMY_EXPENSES = [
   { id: 'e1', title: 'Toilet Paper', amount: 294.67, date: new Date(2021, 9, 11) },
@@ -29,7 +29,6 @@ const addExpenseHandler = expense =>{
 };
   return (
     <div>
-      {/* <Car carName={'Mustang'} cost={2000} type={'muscle'} /> */}
       <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
       <Expenses items={expenses} />
     </div>
