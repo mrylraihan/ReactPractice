@@ -18,6 +18,7 @@ const deleteUserHandler = (quoteId)=>{
   })
 }
 
+
   return (
     <div>
       <AddUser onAddQuote={addQuoteHandler}/>
