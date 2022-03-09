@@ -3,16 +3,17 @@ import React from "react";
 
 import GetFullName from "./components/GetFullName";
 import GetFullNameRef from "./components/GetFullNameRef";
-import CounterComp from './components/CounterComp'
+import AnotherComp from "./components/AnotherComp";
 
 
 function App() {
   
   return (
     <div>
-     <CounterComp/>
+     {/* <CounterComp/> */}
      <GetFullName/>
      <GetFullNameRef/>
+     <AnotherComp/>
     </div>
   );
 }
