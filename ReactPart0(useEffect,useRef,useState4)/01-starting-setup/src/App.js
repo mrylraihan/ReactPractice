@@ -5,7 +5,6 @@ import FullName from './components/FullName';
 import FullNameRef from './components/FullNameRef';
 import FullNameTimeout from "./components/FullNameTimeout";
 
-
 function App() {
   
   return (
