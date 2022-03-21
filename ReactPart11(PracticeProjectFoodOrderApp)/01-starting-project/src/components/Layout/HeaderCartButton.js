@@ -4,7 +4,7 @@ import classes from './HeaderCartButton.module.css'
 
 const HeaderCartButton = props => {
     return (
-        <button className={classes.button}>
+        <button className={classes.button} onClick={props.onClick}>
             <span className={classes.icon}>
                 {/* this CartIcon is just an svg cart icon we could have done with with react icons */}
             <CartIcon />
