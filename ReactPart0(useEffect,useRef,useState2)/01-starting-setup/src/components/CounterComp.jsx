@@ -7,11 +7,13 @@ const CounterComp = () => {
     useEffect(()=>{
         document.title = counter 
         inputRef.current.value = counter
-    }, [counter])
+    },[counter])
     return (
         <div>
-            <p ref={inputRef}>{inputRef.current.value}</p>
-            <button onClick={()=>setCounter(counter + 1)}>the counter is {counter}</button>
+            <p ref={inputRef}>{inputRef.current.value}, {counter}</p>
+            <button onClick={()=>{
+                inputRef.current.value = inputRef.current.value + 1
+                setCounter(inputRef.current.value)}}>the counter is {counter}</button>
         </div>
     )
 }
