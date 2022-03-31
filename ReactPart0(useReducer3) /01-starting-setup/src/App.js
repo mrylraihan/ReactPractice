@@ -1,4 +1,5 @@
 import React from 'react'
+import CountOneObj from './CountOneObj';
 import CountOneReducer from './CountOneReducer'
 import CountOneReducerIf from './CountOneReducerIf'
 import FullNameReducer from './FullNameReducer';
@@ -10,6 +11,7 @@ function App() {
       <CountOneReducer />
       <CountOneReducerIf />
       <FullNameReducer/>
+      <CountOneObj/>
     </div>
   );
 }
