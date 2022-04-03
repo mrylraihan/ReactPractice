@@ -8,6 +8,7 @@ const MiddleComp = () => {
 
     const getFullName =(e)=>{
         e.preventDefault()
+        // this getFullN is the method we are grabbing from our Context in our app
         ctx.getFullN(
             firstName.current.value + ' '+ lastName.current.value
         )
