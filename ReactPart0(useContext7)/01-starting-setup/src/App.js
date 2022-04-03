@@ -11,7 +11,7 @@ function App() {
   return (
     <>
     <OutOfContext/>
-    <TestContext.Provider value={{ name: fullName, getFullN: setFullName}} >
+      <TestContext.Provider value={{ name: fullName, getFullN: setFullName, logSomething:()=>console.log('howdy yall!')}} >
       <HighestComp2></HighestComp2>
      <HighestComp/>
    </TestContext.Provider>

@@ -1,5 +1,6 @@
 import React, { useContext, useRef } from 'react'
 import TestContext from '../context/variable-context'
+import LowestComp from './LowestComp'
 
 const MiddleComp = () => {
     const firstName = useRef('')
@@ -32,6 +33,7 @@ const MiddleComp = () => {
                     <button type='submit'>Full Name</button>
                 </div>
             </form>
+            <LowestComp/>
         </div>
     )
 }
