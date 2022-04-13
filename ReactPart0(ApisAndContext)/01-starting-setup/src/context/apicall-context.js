@@ -10,6 +10,7 @@ const TestContext = React.createContext({
                 b(result[Object.keys(result)[0]])
                 return
             })
+            .catch(error=>console.log(error))
            
     }
 })
