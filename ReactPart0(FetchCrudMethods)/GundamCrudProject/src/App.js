@@ -6,6 +6,8 @@ import FetchById from './components/FetchById';
 import FetchCreateOne from './components/FetchCreateOne';
 import FetchDelete from './components/FetchDelete';
 import FetchFirstRoute from './components/FetchFirstRoute';
+import FetchPatch from './components/FetchPatch';
+import FetchPut from './components/FetchPut';
 
 function App() {
   return (
@@ -29,6 +31,14 @@ function App() {
       <div className="app">
         <h1>Delete one Gundamby id!</h1>
         <FetchDelete />
+    </div>
+      <div className="app">
+        <h1>Patch one Gundamby id!</h1>
+        <FetchPatch />
+    </div>
+      <div className="app">
+        <h1>Edit one Gundamby id!</h1>
+        <FetchPut />
     </div>
 
     </>
