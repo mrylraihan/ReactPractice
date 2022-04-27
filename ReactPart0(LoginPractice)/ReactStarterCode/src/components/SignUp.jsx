@@ -8,15 +8,18 @@ const SignUp = (props) => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
 
+
+
+
     const submitHandler = (e) =>{
         e.preventDefault();
-        if(password === confirmPassword){
+        if(password === confirmPassword && email !== ''){
             props.getUser((prev)=>{
                 return {...prev, email:email, name:name, password:password};
             });
             props.setIsTrue(true);
         }else{
-            alert("Please try again! incorrect password and confirmation dont match!")
+            alert("Please try again! incorrect password and confirmation dont match!, or Something is Empty!")
         }
         setEmail('');
         setName('');
@@ -34,14 +37,14 @@ const SignUp = (props) => {
             <Form onSubmit={submitHandler}>
                 <Form.Group className="mb-3" >
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control type="email" placeholder="Enter email" value={email} onChange={e=>setEmail(e.target.value)} />
                     <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
                     </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" >
                     <Form.Label>Name</Form.Label>
-                    <Form.Control type="text" placeholder="Enter Name" />
+                            <Form.Control type="text" placeholder="Enter Name" value={name} onChange={e => setName(e.target.value)}/>
                     <Form.Text className="text-muted">
                         Send the Name.
                     </Form.Text>
@@ -49,11 +52,11 @@ const SignUp = (props) => {
 
                 <Form.Group className="mb-3" >
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                            <Form.Control type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
                 </Form.Group>
                 <Form.Group className="mb-3" >
                     <Form.Label>Confirm Password</Form.Label>
-                    <Form.Control type="password" placeholder="ConfirmPassword" />
+                            <Form.Control type="password" placeholder="ConfirmPassword" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)}/>
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Submit
