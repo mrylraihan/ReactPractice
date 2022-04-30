@@ -13,7 +13,9 @@ function App() {
   const [user, setUser] = useState(false)
   return (
     <Router>
-      <div>
+      <>
+        <h1>Hey lets Practice Routers</h1>
+      <div className='container'>
         <Navbar/>
         <Routes>
           <Route path='/home' element={<Home user={user}/>}/>
@@ -23,6 +25,7 @@ function App() {
           <Route path='/Login2' element={<Login2 user={user} setUser={setUser}/>}/>
         </Routes>
       </div>
+      </>
     </Router>
   );
 }
