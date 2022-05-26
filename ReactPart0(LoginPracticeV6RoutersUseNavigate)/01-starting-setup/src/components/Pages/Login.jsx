@@ -8,6 +8,7 @@ const Login = (props) => {
     let navigate = useNavigate()
     let navigate2 = useNavigate()
 
+
     const onSubmit = (e) => {
         e.preventDefault()
         console.log(userRef.current.value);
@@ -17,8 +18,8 @@ const Login = (props) => {
             props.setUser(true)
         }
     }
-
-   const redirectHomeHandler =()=>{
+    
+    const redirectHomeHandler =()=>{
        return navigate('/home')
    }
     const redirectAboutHandler =()=>{
