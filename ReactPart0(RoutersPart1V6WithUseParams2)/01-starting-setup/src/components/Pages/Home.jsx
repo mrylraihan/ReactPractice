@@ -8,9 +8,10 @@ const Home = (props) => {
         <div>
             Home
             <ul>
-                {props.peopleArray.map(ele => <><li key={ele.id}>{ele.name}</li><button onClick={
+                {props.peopleArray.map(ele => <li key={ele.id}>{ele.name}
+                <button onClick={
                     () => navigate(`${ele.id}`)
-                }>sing page</button></>)}
+                }>sing page</button></li>)}
                 
             </ul>
             <Outlet/>
