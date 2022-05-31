@@ -14,6 +14,8 @@ const Login2 = (props) => {
         }else{
             props.setUser(true)
         }
+        userRef.current.value = ''
+        passwordRef.current.value = ''
     }
 
     if(loginUser){
