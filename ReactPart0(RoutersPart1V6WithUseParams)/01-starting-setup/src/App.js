@@ -9,6 +9,7 @@ import Details from './components/Pages/Details.jsx'
 
 
 function App() {
+
 const peopleArray = [
   {id:1, name:'Meshia'},
   {id:2, name:'Heshow'},
@@ -16,7 +17,7 @@ const peopleArray = [
 ]
   return (
     <Router>
-      <div>
+      <div className="app">
         <Navbar/>
         <Routes>
           <Route path='/about' element={<About/>}/>
