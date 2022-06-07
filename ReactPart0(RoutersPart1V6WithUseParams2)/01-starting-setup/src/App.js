@@ -14,7 +14,8 @@ const peopleArray = [
   {id:3, name:'Wallie'}
 ]
 function App() {
- const [list, setList] = useState(peopleArray)
+  // 
+//  const [list, setList] = useState(peopleArray)
   return (
     <Router>
       <div>
@@ -22,8 +23,8 @@ function App() {
         <Routes>
           <Route path='/about' element={<About/>}/>
           <Route path='/extras' element={<Extras/>}/>
-          <Route path='/home/' element={<Home peopleArray={list}/>}>
-            <Route path=':userID' element={<Details peopleArray={list}/>}/>
+          <Route path='/home/' element={<Home peopleArray={peopleArray}/>}>
+            <Route path=':userID' element={<Details peopleArray={peopleArray}/>}/>
           </Route>
         </Routes>
       </div>
