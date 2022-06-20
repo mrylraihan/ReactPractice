@@ -3,7 +3,7 @@ import React from 'react'
 const ContextFile = React.createContext({
     name:'Wallie',
     sayName:function(){
-        console.log(`hey im ${this.name}`);
+        return `hey im ${this.name}`;
     }
 })
 

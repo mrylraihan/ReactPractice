@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
+import ChangeName from './components/ChangeName';
 import ShowChangedContext from './components/ShowChangedContext';
 import ShowNameContext from './components/ShowNameContext';
 
@@ -9,12 +10,13 @@ function App() {
   const [name, setName]= useState('Heshow')
 
   const saySomething = ()=>{
-    console.log(`hey it's ${name}`);
+    return `hey it's ${name}`;
   }
   return (
     <>
     <div className="app">
       <h1>Hi there!</h1>
+        <ChangeName setName={setName}/>
     </div>
     <div className='app'>
       <ShowNameContext />
