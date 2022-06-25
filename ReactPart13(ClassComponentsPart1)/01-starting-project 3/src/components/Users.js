@@ -18,17 +18,25 @@ class Users extends Component{
     }
   }
   toggleUsersHandler(){
-    this.setState({showUsers:true});
+    this.setState(curState=>{
+      return {showUsers:!curState.showUsers}});
   
   }
   render(){
+      const usersList = (
+    <ul>
+      {DUMMY_USERS.map((user) => (
+        <User key={user.id} name={user.name} />
+      ))}
+    </ul>
+  );
     return (
       <div>
         <div className={classes.users}>
-       <button onClick={this.toggleUsersHandler}>
+       <button onClick={this.toggleUsersHandler.bind(this)}>
          {this.state.showUsers ? 'Hide' : 'Show'} Users
        </button>
-       {/* {this.state.showUsers && usersList} */}
+       {this.state.showUsers && usersList}
      </div>
       </div>
     )

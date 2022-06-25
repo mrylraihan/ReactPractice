@@ -1,19 +1,19 @@
-import React, { useState, useRef } from 'react'
+import React, { useRef } from 'react'
 import {Button, Form} from 'react-bootstrap'
-const LoginPage = () => {
-    const [user, setUser] = useState({})
+const LoginPage = ({ setUser }) => {
+    // const [user, setUser] = useState({})
     const email = useRef()
     const password = useRef()
     const submitHandler = (e)=>{
         e.preventDefault()
-        setUser(
-            {
+        setUser({
                 email: email.current.value,
-                password: password.current.value
-            }
-        )
+                password: password.current.value 
+            })
+            email.current.value = ''
+            password.current.value = ''
     }
-    console.log(user);
+
     return (
         <div>
             <Form onSubmit={submitHandler}>
