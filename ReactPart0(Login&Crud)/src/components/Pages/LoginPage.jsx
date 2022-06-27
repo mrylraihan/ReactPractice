@@ -1,9 +1,11 @@
 import React, { useRef } from 'react'
 import {Button, Form} from 'react-bootstrap'
+
 const LoginPage = ({ setUser }) => {
     // const [user, setUser] = useState({})
     const email = useRef()
     const password = useRef()
+    
     const submitHandler = (e)=>{
         e.preventDefault()
         setUser({

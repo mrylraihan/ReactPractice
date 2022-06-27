@@ -12,6 +12,7 @@ function App() {
   return (
     <div className="app">
       <h1>Hi there!</h1>
+      {/* {user ? <HomePage user={user} /> : <LoginPage setUser={setUser} />} */}
       {!user && <LoginPage setUser={setUser}/>}
       {user && <HomePage user={user}/>}
     </div>
