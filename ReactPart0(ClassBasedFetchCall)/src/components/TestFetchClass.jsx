@@ -12,15 +12,18 @@ buttonToggleHandler(){
     this.setState({buttonToggle:!this.state.buttonToggle})
     this.setState({fetchedQuote:''})
 }
+// like useEffect with an empty dependency array
 componentDidMount(){
     this.fetchCall()
 }
-    componentDidUpdate() {
-        this.state.buttonToggle// im not sure what this is doing 
+//relying on previous state to see if it changed and if it did then run the method 
+    componentDidUpdate(preVP, preVS) {
+        if(preVS.buttonToggle!==this.state.buttonToggle){
+            this.state.buttonToggle// im not sure what this is doing 
+            this.fetchCall()
+        }
     }
-    componentWillUnmount() {
-        this.fetchCall() // im also not sure what this is doing also 
-    }
+ 
 fetchCall(){
     fetch('https://api.kanye.rest')
         .then(res => res.json())
