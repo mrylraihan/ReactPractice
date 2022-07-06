@@ -18,7 +18,7 @@ function App() {
     }).then(res=>res.json())
     .then(console.log)
   }
-
+ 
 const getHandler=()=>{
   fetch('https://react-http-cb4a9-default-rtdb.firebaseio.com/names.json')
   .then(res=>res.json())
