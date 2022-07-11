@@ -38,11 +38,14 @@ function App() {
   useEffect(() => {
     fetchTasks();
   }, []);
-
+  
+  console.log('in app',tasks);
   const taskAddHandler = (task) => {
+    console.log('in task add handler',task);
     setTasks((prevTasks) => prevTasks.concat(task));
+    // setTasks((prevTasks) => [...prevTasks, task]);
   };
-
+ 
   return (
     <React.Fragment>
       <NewTask onAddTask={taskAddHandler} />
