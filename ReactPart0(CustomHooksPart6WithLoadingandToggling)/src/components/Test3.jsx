@@ -1,8 +1,8 @@
 import React from 'react'
-import useFetch from '../hooks/use-fetch'
+import useFetchToogle from '../hooks/use-fetch-toggle'
 
 const Test3 = () => {
-    const [result, isLoading, setUrl ] =useFetch()
+    const [result, isLoading, setUrl] = useFetchToogle()
     
     const getData = ()=>{
         setUrl('https://jsonplaceholder.typicode.com/posts')

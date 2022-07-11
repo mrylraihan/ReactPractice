@@ -1,27 +1,16 @@
-import { useEffect, useState } from 'react'
+import {useState, useEffect} from 'react'
 
-const useFetch = () => {
-    const [passedUrl, setUrl] = useState('')
-    const [result, setResult] = useState('')
-    const [isLoading, setIsLoading] = useState(false)
+const useFetch = (url) => {
+    const [result, setResult] = useState([])
     useEffect(()=>{
-
-        if(passedUrl){
-                setIsLoading(true)
-                fetch(passedUrl)
-                .then(res=>res.json())
-                .then(res=>{
-                    setResult(res)
-                    setIsLoading(false)
-                })
-                .catch(console.error)
-            }else{
-                setResult('')
-            }
-
-    }, [passedUrl])
-
-    return [result, isLoading, setUrl ]
+            fetch(url)
+            .then(res=>res.json())
+            .then(res=>{
+                setResult(res)
+            })
+            .catch(console.error)
+    },[url])
+    return result
 }
 
 export default useFetch
