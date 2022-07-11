@@ -16,7 +16,7 @@ const useFetch = () => {
                 })
                 .catch(console.error)
             }else{
-                setResult({message:'no data im sorry'})
+                setResult('')
             }
 
     }, [passedUrl])

@@ -12,11 +12,11 @@ const Test3 = () => {
             <h1>Test3</h1>
             <button onClick={result.length>0?setUrl.bind(this,''):getData}>show me data</button>
 
-            {!isLoading && !result.length>0 && <p>no Data</p>}
+            {!isLoading && <p>no Data</p>}
             {isLoading && <p>...Loading</p>}
             
             {result.length>0 && result.map(ele=><p key={ele.id}>{ele.title}</p>)}
-            {result.message && <p>{result.message}</p>}
+           
         </div>
     )
 }
