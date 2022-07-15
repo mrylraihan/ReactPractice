@@ -13,13 +13,11 @@ const PostData = () => {
         e.preventDefault()
         setUrlConfig({
           url:'https://jsonplaceholder.typicode.com/posts', 
-            method:'POST', 
+            method:'post', 
             body:{
                 title: title.current.value,
                 body: body.current.value,
                 // userId: Math.random() + Math.random()*10,
-            }, headers: {
-                'Content-type': 'application/json',
             }
         })
         title.current.value = ''
