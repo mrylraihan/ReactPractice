@@ -1,76 +1,62 @@
-import { useState } from 'react'
+import React from 'react'
+import useInput from '../hooks/use-input';
 
 const SimpleInput = (props) => {
-  const [enterName, setEnteredName] = useState('')
-  const [enteredNameTouched, setEnteredNameTouched] = useState(false)
+  // custom hook for name
+  const { value: enteredName, 
+    isValid:enteredNameIsValid,
+    hasError: nameInputHasError,
+     valueChangeHandler: nameChangeHandler,
+      inputBlurHandler: nameBlurHandler, 
+    reset:resetNameInput } = useInput((value)=>value.trim() !== '');
+  // custom hook for email
+  const { value: enteredEmail, 
+    isValid:enteredEmailIsValid,
+    hasError: emailInputHasError,
+     valueChangeHandler: emailChangeHandler,
+      inputBlurHandler: emailBlurHandler, 
+    reset:resetEmailInput } = useInput((value)=>value.includes("@"));
 
-  const [enteredEmail, setEnteredEmail] = useState('')
-  const [enteredEmailTouched, setEnteredEmailTouched] = useState(false)
-  
-  
 
-  
-  // this will get rerendered on every keystroke due to the state change so this value will keep changing depending on the state of the enteredName
-  const enteredNameIsValid = enterName.trim() !== '';
-  const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched
-  
 
-  const enteredEmailIsValid = enteredEmail.includes('@')
-  const enteredEmailIsInvalid = !enteredEmailIsValid && enteredEmailTouched
 
   let formIsValid = false;
-    if(enteredNameIsValid && enteredEmailIsValid){
-      formIsValid = true
-    }
+  if (enteredNameIsValid && enteredEmailIsValid) {
+    formIsValid = true
+  }
 
-  
-  // checking on every keystroke to change the validations state and if it was touched or not
-  const nameInputChangeHandler = event => {
-    setEnteredName(event.target.value)
-  }
-  const emailInputChangeHandler = event => {
-    setEnteredEmail(event.target.value)
-  }
-  // blue is for if the field is touched and here we are changing the validations for our error here and checking the input field
-  const nameInputBlurHandler = (e) => {
-    setEnteredNameTouched(true)
-  }
-  const emailInputBlurHandler = (e) => {
-    setEnteredEmailTouched(true)
-  }
+
+
 
   // on submit checking if the enterName state is empty to though an error
   const formSubmissionHandler = event => {
     event.preventDefault()
-    // setEnteredNameTouched(true);
-    if (enteredNameIsValid) {
-
+  
+    if (!enteredNameIsValid && !enteredEmailIsValid) {
+      console.log('nothing');
       return
     }
     // if you need every keystroke for example your going to validate it on every keystroke the state is better. 
-    setEnteredName('')
-    setEnteredEmail('')
-    setEnteredNameTouched(false)
-    setEnteredEmailTouched(false)
-
+    resetNameInput()
+    resetEmailInput()
   }
   //  checks is the enterName state is empty and if input was touched to change the class 
 
-  const nameInputClasses = nameInputIsInvalid ? 'form-control invalid' : 'form-control'
-  const emailInputClasses = enteredEmailIsInvalid ? 'form-control invalid' : 'form-control'
+  const nameInputClasses = nameInputHasError ? 'form-control invalid' : 'form-control'
+  const emailInputClasses = emailInputHasError ? 'form-control invalid' : 'form-control'
   return (
     <form onSubmit={formSubmissionHandler}>
       <div className={nameInputClasses}>
         <label htmlFor='name'>Your Name</label>
-        <input type='text' id='name' value={enterName} onChange={nameInputChangeHandler} onBlur={nameInputBlurHandler} />
+        <input type='text' id='name' value={enteredName} onChange={nameChangeHandler} onBlur={nameBlurHandler} />
         {/* if this true meaning enteredName is not valid and it was touched show this line of html */}
-        {nameInputIsInvalid && <p className='error-text'>you did'nt write anything!</p>}
+        {nameInputHasError && <p className='error-text'>you did'nt write anything!</p>}
       </div>
       <div className={emailInputClasses}>
         <label htmlFor='name'>Your Email</label>
-        <input type='email' id='email' value={enteredEmail} onChange={emailInputChangeHandler} onBlur={emailInputBlurHandler} />
+        <input type='text' id='email' value={enteredEmail} onChange={emailChangeHandler} onBlur={emailBlurHandler} />
         {/* if this true meaning enteredName is not valid and it was touched show this line of html */}
-        {enteredEmailIsInvalid && <p className='error-text'>please enter a valid email!</p>}
+        {emailInputHasError && <p className='error-text'>please enter a valid email!</p>}
       </div>
       <div className="form-actions">
         <button disabled={!formIsValid}>Submit</button>

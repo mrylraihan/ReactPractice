@@ -30,6 +30,7 @@ const deleteHandler=()=>{
     {task && <h2>{task.body}</h2>}
     <button onClick={()=>nav(-1)}>go back</button>
     <button onClick={deleteHandler}>delete task</button>
+      <button onClick={() => nav(`/editTask/${task._id}`)}>edit task</button>
     </>
   )
 }

@@ -34,6 +34,7 @@ function CreateTask() {
   return (
     <>
     <div>CreateTask</div>
+          {newTask && <h3>{newTask.title}</h3>}
     <form onSubmit={onSubmitHandler}>
         <div>
             <label>Title:
