@@ -17,7 +17,7 @@ const NewTask = (props) => {
 
   const enterTaskHandler = async (taskText) => {
     sendTaskRequest({
-      url: 'https://react-http-cb4a9-default-rtdb.firebaseio.com/tasks.json', method: 'POST', headers: {
+      url: 'https://testreact-5b72f-default-rtdb.firebaseio.com/tasks.json', method: 'POST', headers: {
         'Content-Type': 'application/json',
       }, body: { text: taskText }
     }, createTask.bind(this, taskText));

@@ -1,6 +1,7 @@
 import React from 'react'
 
 const DisplayComp =React.forwardRef((props, ref) => {
+    
     return (
         <div>
             <p>{ref.current.value}</p>
