@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import About from './components/Pages/About';
+import Add from './components/Pages/Add';
 import AllPage from './components/Pages/AllPage';
 import Home from './components/Pages/Home';
 import Single from './components/Pages/Single';
@@ -26,6 +27,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/all' element={<AllPage list={list}/>} />
           <Route path='/all/:id' element={<Single list={list} />} />
+          <Route path='/add' element={<Add setList={setList} />} />
         </Routes>
       </div>
     </Router>

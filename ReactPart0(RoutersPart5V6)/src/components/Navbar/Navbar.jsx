@@ -9,6 +9,7 @@ function Navbar() {
               <Link to='/home'><li>home</li></Link>
               <Link to='/all'><li>all page</li></Link>
               <Link to='/about'><li>about</li></Link>
+              <Link to='/add'><li>add one</li></Link>
             
           </ul>
     </div>
