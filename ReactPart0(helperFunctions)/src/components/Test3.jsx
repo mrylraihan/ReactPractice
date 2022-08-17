@@ -27,8 +27,10 @@ function Test3() {
         ageRef.current.value = ''
     }
 
+    const classAssigned = user ? styles.user : styles.userInvalid
+
   return (
-    <div className={user?styles.user:''}>
+      <div className={classAssigned}>
           <h3>Test3</h3>
           {user.email && <p>{user.email} is allowed to use this site</p>}
           {user.errorMessage && <p>{user.errorMessage}</p>}
