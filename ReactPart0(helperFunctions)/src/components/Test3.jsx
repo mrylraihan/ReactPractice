@@ -1,5 +1,5 @@
-import React, { useRef } from 'react'
-import { useState } from 'react';
+import React, { useRef, useState } from 'react'
+import styles from './Test3.module.css'
 
 const validateEmail = email=> email.includes('@');
 const validAge = age => +age >= 18
@@ -28,7 +28,7 @@ function Test3() {
     }
 
   return (
-    <div>
+    <div className={user?styles.user:''}>
           <h3>Test3</h3>
           {user.email && <p>{user.email} is allowed to use this site</p>}
           {user.errorMessage && <p>{user.errorMessage}</p>}
