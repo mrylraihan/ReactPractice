@@ -35,7 +35,6 @@ function CompUseReducer() {
     }
     console.log('useReducer Obj: ', nameObj);
   return (
-    <>
     <div className='app'>
           <h1>CompUseReducer</h1>
           {nameObj.toggle && <h3>{nameObj.fullName}</h3>}
@@ -54,27 +53,6 @@ function CompUseReducer() {
           </form>
           <button onClick={toggleName}>Toggle Name</button>
     </div>
-    <div className='app'>
-
-    <code>{
-        `
-        const reducer = (state, action) => {
-            if (action.type == 'first') {
-                return {...state, firstName: action.first }
-            } else if (action.type == 'last') {
-                return {...state, lastName: action.last }
-            } else if (action.type == 'full') {
-                return {...state, fullName: s{state.firstName} s{state.lastName}, firstName: '', lastName: '' }
-            } else if (action.type == 'toggle') {
-                return { ...state, toggle: !state.toggle }
-            }else{
-                return initial
-            }
-        }       
-        `
-    }</code>
-    </div>
-    </>
   )
 }
 
