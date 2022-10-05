@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './App.css';
+import TestCustomHook from './components/TestCustomHook';
 import TestRedux from './components/TestRedux';
 import TestResult from './components/TestResult';
 
@@ -13,6 +14,7 @@ function App() {
     </div>
     <TestRedux/>
     <TestResult/>
+    <TestCustomHook/>
     </>
   );
 }
