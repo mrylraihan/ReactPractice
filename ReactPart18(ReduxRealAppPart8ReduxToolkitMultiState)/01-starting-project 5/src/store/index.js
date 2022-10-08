@@ -5,14 +5,13 @@
 import { createSlice, configureStore } from '@reduxjs/toolkit'
 // import redux from 'redux'
 
-const initial = {counter:0, fullName:'Wallie R.', toggle:true}
+const initialCounterState = {counter:0, fullName:'Wallie R.', toggle:true}
 
 // call create slice , and store it somewhere
-
 const counterSlice = createSlice({
     // every state slice needs a name
     name:'counter',
-    initialState: initial, // we need to set the initial state by passing the initial 
+    initialState: initialCounterState, // we need to set the initial state by passing the initial 
     // we already create up top
     // then we need to add reducers to all the reducers this state slice needs 
     reducers:{
@@ -32,6 +31,23 @@ const counterSlice = createSlice({
         },
         toggleCounter(state){
            state.toggle = !state.toggle
+        }
+    }
+})
+
+const initialLoginState = {
+    isAuthenticated : false
+}
+
+const authSlice = createSlice({
+    name:'authentication',
+    initialState: initialLoginState,
+    reducers:{
+        login(state){
+            return {...state, isAuthenticated: true}
+        },
+        logOut(state){
+            return {...state, isAuthenticated: false }
         }
     }
 })
@@ -58,12 +74,14 @@ const counterSlice = createSlice({
 // counterSlice.actions.toggleCounter this will be out dispatch to trigger different actions 
 
 const store = configureStore({
-    reducer: counterSlice.reducer//if only one this is fine 
+    reducer: {counter: counterSlice.reducer,
+              auth: authSlice.reducer}//if only one this is fine 
     //if multiple 
     // reducer:{counter:counterSlice.reducer, etc:etc}//basically a map of reducers
 })
 
 // we need ot export this to provide the store to the react app 
 export const countActions = counterSlice.actions//so we can dispatch actions
+export const authActions = authSlice.actions
 export default store;
 // now where do we import our store to use it

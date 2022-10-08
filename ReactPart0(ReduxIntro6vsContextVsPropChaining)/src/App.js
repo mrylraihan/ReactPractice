@@ -13,6 +13,7 @@ function App() {
   const [result1, setResult1] = useState('')
   const [toggle, setToggle] = useState(false)
   const dispatch = useDispatch()
+
   useEffect(()=>{
     axios.get('https://api.kanye.rest')
     .then(res=>res.data)
@@ -22,7 +23,9 @@ function App() {
     })
     .catch(console.error)
   }, [toggle])
+  
   console.log(result1);
+  
   return (
     <>
     <div className="app">
