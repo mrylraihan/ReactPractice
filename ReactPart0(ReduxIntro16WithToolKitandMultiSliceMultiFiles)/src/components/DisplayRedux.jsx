@@ -5,11 +5,16 @@ import { nameActions } from '../store/nameSlice'
 
 function DisplayRedux() {
   const name = useSelector(state=>state.nameState.name)
+  const letter = useSelector(state=>state.nameState.letter)
   const toggle = useSelector(state=>state.toggleState.toggle)
   const dispatch = useDispatch()
   
   const onChangeName = (e)=>{
-    dispatch(nameActions.getName(e.target.value))
+    dispatch(nameActions.getLetter(e.target.value))
+  }
+
+  const submitName = ()=>{
+    dispatch(nameActions.getName())
   }
 
   const toggleHeader = ()=>{
@@ -23,8 +28,9 @@ function DisplayRedux() {
         {name && <h2>{name}</h2>}
         <label>
           type in name:
-          <input type="text" value={name} onChange={onChangeName}/>
+          <input type="text" value={letter} onChange={onChangeName}/>
         </label>
+        <button onClick={submitName}>submit name</button>
         <button onClick={toggleHeader}>toggle header</button>
       </div>
     </div>
