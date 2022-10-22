@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import CustomHookStatic from './components/CustomHookStatic';
 import FetchComp from './components/FetchComp';
 import FetchCompWithCustomeHook from './components/FetchCompWithCustomeHook';
 import ListResultComp from './components/ListResultComp';
@@ -15,6 +16,7 @@ function App() {
       <FetchComp addToList={setListResults}/>
       <ListResultComp list={listResults}/>
       <FetchCompWithCustomeHook addToList={setListResults} />
+      <CustomHookStatic/>
     </>
   );
 }
