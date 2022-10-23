@@ -1,15 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
     <div>
-        <ul>
-            <li>Home</li>
-            <li>See All</li>
-            <li>See One</li>
-            <li>Create One</li>
-            <li>useParams</li>
-        </ul>
+      <ul>
+        <Link to={'/home'}><li>Home</li></Link>
+        <Link to={'/createOne'}><li>Create One</li></Link>
+        <Link to={'/seeAll'}><li>See All</li></Link>
+        <Link to={'/findOne'}><li>See One</li></Link>
+      </ul>
     </div>
   )
 }
