@@ -1,0 +1,23 @@
+.errorStyles input{
+    background-color: salmon;
+    border: red;
+}
+
+.errorStyles h3{
+    color: red;
+}
+
+/* with Css Modules you can add the class name as we did and 
+if you want to specify which html tag you want to reference you would just do a space as we did 
+- now you have to add them as a class so we would use .<class name> 
+- and add them to our component with the attribute className={}
+- as you see above we have our class name .<className> and then the html tag 
+- .errorStyles h3 here any html with the tag h3 will be affected by these styles 
+- the way you turn a css file to a module is by adding module between the name and the file extension 
+- Login.css ---> Login.module.css the key word module is indicates to React your using 
+CSS modules and you want to basically turn your css into an object to access different classes 
+with the dot notation 
+- the way you would import css styles is import styles from './Login.module.css'
+- and the way you use is is the same way you would use an object with the className being a property 
+- className = {styles.errorStyles }
+*/
