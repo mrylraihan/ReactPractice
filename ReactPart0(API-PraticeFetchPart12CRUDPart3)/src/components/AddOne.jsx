@@ -1,14 +1,10 @@
-import React, { useEffect, useRef} from 'react'
+import React, {useRef} from 'react'
 
-function AddOne({post, setPost, list, setList}) {
+function AddOne({ setList, list, }) {
    
     const titleRef = useRef()
     const bodyRef = useRef()
-    useEffect(()=>{
-        setList(prev=>{
-            return [...prev,post]
-        })
-    },[post])
+   
 
     const onSubmitHandler = e =>{
         e.preventDefault()
@@ -24,15 +20,16 @@ function AddOne({post, setPost, list, setList}) {
             },
         })
             .then((response) => response.json())
-            .then(result=>{setPost(prev=>{
-                return {...result, id:list.length+1}
-            })
+            .then(result=>{
+                result.id = list.length + 1
                 titleRef.current.value = ''
                 bodyRef.current.value = ''
+                return result
             })
-            .then((json) => console.log(json));
+            .then(result=>setList(prev=>[...prev,result]))
+            .catch(console.error);
     }
-console.log(post);
+
   return (
     <div className='app'>
           <h1>AddOne</h1>

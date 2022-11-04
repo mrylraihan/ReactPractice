@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
-function ShowAll(props) {
-const [list, setList] = useState([])
-// console.log(props.list);
-useEffect(()=>{
-    setList(props.list)
-},[props.list])
-    // console.log(list);
+function ShowAll({list}) {
+// const [list, setList] = useState(props.list)
+// // console.log(props.list);
+// useEffect(()=>{
+//     setList(props.list)
+// },[props.list])
+//     console.log(list);
 
-    const mappedContent = list.map(ele=><li key={ele.id} >{ele.title}</li>)
+    const mappedContent = list.map(ele=><div key={ele.body}><li>{ele.title}</li></div>)
     // console.log(mappedContent);
 return (
     <div className='app'>
           <h1>ShowAll</h1>
           <ul>
-           {props.list.length>0 && mappedContent}
+           {list && mappedContent}
           </ul>
     </div>
   )
