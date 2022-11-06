@@ -7,7 +7,11 @@ function AddOne(props) {
 
     useEffect(()=>{
         props.setAllPost(prev=>{
-            return [...prev, post]
+            // some times you will get issues with this form of updating an array, 
+            // and its because you are rendering the array previously and when you copy it with the spread operator react will see it as it was rendered already and this new state is a new array so its like we did these already regardless of the new element added, 
+            // so use array.concat()
+            // return [...prev, post]
+            return prev.concat(post)
         })
     },[post])
 
@@ -21,7 +25,7 @@ function AddOne(props) {
         .then(res=>res.json())
         .then(result=>{
             setPost(prev=>{
-                return { ...result, id: props.list.length + 2 }
+                return { ...result, id: props.list.length + 1 }
             })
         })
         .catch(console.error)
