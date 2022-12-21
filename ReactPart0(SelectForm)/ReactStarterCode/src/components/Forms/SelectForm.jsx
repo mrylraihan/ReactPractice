@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 const SelectForm = () => {
     const [optionPicked, setOptionsPicked ] = useState()
-
+    console.log(optionPicked);
     const onSubmitHandler = (e) =>{
         e.preventDefault()
         console.log(optionPicked);
